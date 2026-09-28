@@ -1,0 +1,30 @@
+schema: 1
+week: "03"
+student:
+  name: "Asylbek Uzakbaev"
+  student_id: "23B032082"
+  github: "Assylbek-Uzakbayev"
+assistant:
+  tool: "Google Gemini"
+  model: "gemini-2.5-flash"
+counts:
+  user_stories: 8
+  acceptance_criteria_sets: 3
+checker:
+  pass: 20
+  fail: 3
+  error: 0
+  commit: "HEAD"
+assumptions:
+  overlap_touching_bookings: "allowed"
+  exactly_two_hours: "allowed"
+traceability:
+  use_cases_not_covered: []
+  stories_not_traced: []
+review_findings:
+  - "US-06 initially violated constraints by using 'System' as the actor instead of valid stakeholders."
+  - "UC-05 requires careful separation between student interactions and administrator background analytics."
+  - "R3 ambiguity regarding boundary touch points required an explicit definition in assumptions (UC-02)."
+honesty:
+  can_explain_everything_submitted: "yes"
+  ai_usage_disclosed: "yes"
