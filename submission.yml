@@ -14,7 +14,7 @@ checker:
   pass: 20
   fail: 3
   error: 0
-  commit: "HEAD"
+  commit: "f0e2887"
 assumptions:
   overlap_touching_bookings: "allowed"
   exactly_two_hours: "allowed"
