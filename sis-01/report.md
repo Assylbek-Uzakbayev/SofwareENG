@@ -74,11 +74,11 @@
 <!-- Written BEFORE you run Prompt A. Five points, your own words, numbered. These are the
      "five points" you paste into Prompt A. -->
 
-1. (write here)
-2. (write here)
-3. (write here)
-4. (write here)
-5. (write here)
+1. The system needs tests to check that it works correctly.
+2. Students need instructions explaining how to use the system.
+3. The university needs technical support for the system.
+4. Two students must not be able to book the same room for overlapping times.
+5. Students must not be able to delete other students’ bookings. Only administrators should have this permission.
 
 ## 8. Appendix B — AI exchanges
 
