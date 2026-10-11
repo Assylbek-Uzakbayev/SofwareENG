@@ -9,7 +9,7 @@
   - Comments like this one are ignored by the word counter. Delete them or leave them.
 -->
 
-**Topic:** 1.(write here)
+**Topic:** 1.1
 
 <!-- Exactly one of 1.1 … 1.10, e.g.  **Topic:** 1.4  -->
 
@@ -20,17 +20,17 @@
 <!-- 100–150 words, labels included. One small scenario, used in every prompt and in your
      whole answer. Anything fictional is labelled in Assumptions. -->
 
-**Question:** (write here — the question of your topic, in your own words)
+**Question:** What does a university need beyond program code to receive a usable and maintainable study room booking system?
 
-**Users:** (write here)
+**Users:** Students book study rooms, and university administrators manage rooms and bookings.
 
-**Problem:** (write here)
+**Problem:** A working program alone does not explain how to use, test, install or maintain the system. The university needs a complete delivery package.
 
-**Constraints:** (write here — two constraints)
+**Constraints:** Two bookings for the same room must not overlap. Students must not delete other students’ bookings; only administrators have that permission.
 
-**Risk:** (write here — one important failure or misuse risk)
+**Risk:** Overlapping bookings could leave two students expecting to use the same room.
 
-**Assumptions:** (write here — every fictional detail, labelled as fictional)
+**Assumptions:** This university and its system are fictional. The user roles, booking rules and support needs are fictional scenario assumptions.
 
 ## 2. Analysis
 
