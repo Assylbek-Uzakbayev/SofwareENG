@@ -175,7 +175,7 @@ test_touching_start_is_allowed (test_booking.BookingTests) ... ok
 test_zero_length_is_rejected (test_booking.BookingTests) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.002s
+Ran 24 tests in 0.001s
 
 OK
 ```
@@ -216,7 +216,7 @@ PASS   L5   report 5: debugging evidence                1 row(s) of input / expe
 PASS   L6   report 6: the critique, each point judged   critique pasted, 4 points judged
 PASS   L7   report 7: change log                        1 change-log row(s)
 PASS   L8   report 8.1: real output of your suite       suite output pasted
-PASS   L9   report 10: conclusion of 120-180 words      168 words
+PASS   L9   report 10: conclusion of 120-180 words      160 words
 ------------------------------------------------------------------------------
 v1 (code/original/booking_v1.py): passes F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 - fails nothing - identical to your final: yes
 SUMMARY pass=32 fail=0 error=0   (32 checks)
