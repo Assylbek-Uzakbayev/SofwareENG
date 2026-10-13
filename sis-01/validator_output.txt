@@ -11,7 +11,7 @@ Checks SHAPE, never QUALITY.
   PASS   D8   assistant.model: GPT 6.1 sol
   PASS   D9   pass + fail + error = 24
   PASS   D10  declared 24/0/0, a run now gives 24/0/0
-  PASS   D11  checker.commit: f006815
+  PASS   D11  checker.commit: 7664ec1
   PASS   D12  counts: all match report.md
   PASS   D13  decisions: match the verification table
   PASS   D14  known_fails matches the checker: []
