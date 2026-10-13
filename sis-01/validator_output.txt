@@ -1,0 +1,19 @@
+SIS #01 declaration � submission.yml
+Checks SHAPE, never QUALITY.
+
+  PASS   D1   schema 1, assignment sis-01
+  PASS   D2   student.name: Assylbek Uzakbayev
+  PASS   D3   student.student_id: 24B032082
+  PASS   D4   student.group: Monday, 16:00-19:00
+  PASS   D5   student.github: Assylbek-Uzakbayev
+  PASS   D6   topic: 1.1
+  PASS   D7   assistant.tool: ChatGPT / Codex
+  PASS   D8   assistant.model: GPT 6.1 sol
+  PASS   D9   pass + fail + error = 24
+  PASS   D10  declared 24/0/0, a run now gives 24/0/0
+  PASS   D11  checker.commit: f006815
+  PASS   D12  counts: all match report.md
+  PASS   D13  decisions: match the verification table
+  PASS   D14  known_fails matches the checker: []
+
+SUMMARY pass=14 fail=0 error=0
