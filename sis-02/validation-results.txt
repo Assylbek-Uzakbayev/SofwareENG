@@ -1,0 +1,18 @@
+SIS #02 declaration — submission.yml
+Checks SHAPE, never QUALITY.
+
+  PASS   D1   schema 1, assignment sis-02
+  PASS   D2   student.name: Assylbek Uzakbayev
+  PASS   D3   student.student_id: 24B032082
+  PASS   D4   student.group: Monday 16:00-19:00
+  PASS   D5   student.github: Assylbek-Uzakbayev
+  PASS   D6   assistant.tool: ChatGPT Work
+  PASS   D7   assistant.model: not displayed
+  PASS   D8   pass + fail + error = 44
+  PASS   D9   declared 37/7/0, a run now gives 37/7/0
+  FAIL   D10  checker.commit must be a hash from git rev-parse --short HEAD, got None
+  PASS   D11  counts: all match report.md
+  PASS   D12  walkthroughs: match section 6 — T1 pass, T2 pass, T3 pass, T4 pass
+  PASS   D13  known_fails matches the checker: ['E10', 'E3', 'E4', 'E6', 'E7', 'E8', 'E9']
+
+SUMMARY pass=12 fail=1 error=0

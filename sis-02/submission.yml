@@ -1,0 +1,31 @@
+# Draft declaration: student_id and checker.commit must be supplied before validation can pass.
+# checker.commit is deliberately absent: no student Git commit has been verified.
+schema: 1
+assignment: "sis-02"
+student:
+  name: "Assylbek Uzakbayev"
+  student_id: "24B032082"
+  group: "Monday 16:00-19:00"
+  github: "Assylbek-Uzakbayev"
+assistant:
+  tool: "ChatGPT Work"
+  model: "not displayed"
+checker:
+  pass: 37
+  fail: 7
+  error: 0
+  commit:
+counts:
+  stories: 3
+  criteria: 6
+  exchanges: 4
+  review_decisions: 7
+  source_checks: 2
+  explanation_words: 250
+  reflection_words: 165
+walkthroughs:
+  T1: pass
+  T2: pass
+  T3: pass
+  T4: pass
+known_fails: [E3, E4, E6, E7, E8, E9, E10]

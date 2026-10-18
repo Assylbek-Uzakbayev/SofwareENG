@@ -1,0 +1,30 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor #FFFFFF
+skinparam classAttributeIconSize 0
+hide methods
+title Course registration domain - R1-R5
+class Student {
+  studentId : String
+}
+class Course {
+  code : String
+  title : String
+}
+class CourseOffering {
+  offeringId : String
+  semester : String
+  capacity : Integer
+  /availablePlaces : Integer
+}
+class Enrollment {
+  enrollmentId : String
+}
+Student "1" -- "0..*" Enrollment : holds >
+CourseOffering "1" -- "0..*" Enrollment : receives >
+Course "1" -- "0..*" CourseOffering : is offered as >
+note "Capacity (R2): capacity is a positive integer.\n0 <= enrollment count <= capacity.\navailablePlaces = capacity - enrollment count." as N1
+N1 .. CourseOffering
+note "Uniqueness (R3): at most one Enrollment\nfor each (studentId, offeringId) pair." as N2
+N2 .. Enrollment
+@enduml
