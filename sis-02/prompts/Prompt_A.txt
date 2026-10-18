@@ -1,0 +1,26 @@
+Act as a requirements analyst. Use only this course registration scenario and rules R1–R5: A student browses an electronic course catalog, chooses a course offering and requests
+registration. Each offering has a limited number of places.
+
+A Course describes a subject. A CourseOffering is one scheduled section in one semester.
+Registration always targets a specific offering.
+
+Assume that the student is signed in, the selected offering exists, and its capacity is a
+positive whole number.
+
+Exclude payments, prerequisites, timetable clashes, waiting lists and cancellation. Use
+fictional students and courses.
+
+| Rule | |
+| --- | --- |
+| **R1. Catalog** | Show the course code, title, offering and available places for one semester. |
+| **R2. Capacity** | Recheck current availability when registering. Enrollment must never exceed the offering's capacity. |
+| **R3. Duplicates** | A student may have at most one enrollment in the same offering. Reject a repeat request. |
+| **R4. Success** | Create exactly one Enrollment linking the student and offering, update availability and return a confirmation. |
+| **R5. Rejection** | Explain "course full" or "already enrolled". Create no enrollment and leave the enrollment count unchanged. |
+
+These rules define this assignment. **A catalog view does not reserve a place.** Model the final
+checks and enrollment creation as one atomic operation so competing requests cannot take the same
+last place. A note describing the atomic operation is sufficient; database implementation is
+outside this assignment.. My initial assumptions are 1. The student is already signed in. 2. The selected course offering exists, and its capacity is a positive whole number..
+Draft 3 user stories and 2 Given / When / Then acceptance criteria for each. Use IDs US-01 to US-03 and AC-01 to AC-06. Map each criterion to rule IDs.
+Cover normal and rejection behavior. List uncertainty separately. Do not add excluded features or invent university policies.

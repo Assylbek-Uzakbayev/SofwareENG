@@ -1,0 +1,247 @@
+{
+  "ok": true,
+  "counts": {
+    "PASS": 44,
+    "FAIL": 0,
+    "ERROR": 0
+  },
+  "total": 44,
+  "rows": [
+    {
+      "id": "S1",
+      "verdict": "PASS",
+      "message": "sections 1-13 present, in order"
+    },
+    {
+      "id": "S2",
+      "verdict": "PASS",
+      "message": "no template markers left"
+    },
+    {
+      "id": "W1",
+      "verdict": "PASS",
+      "message": "section 8 (Modeling explanation): 250 words, range 200-300"
+    },
+    {
+      "id": "W2",
+      "verdict": "PASS",
+      "message": "section 9 (Reflection): 165 words, range 150-200"
+    },
+    {
+      "id": "A1",
+      "verdict": "PASS",
+      "message": "scope statement and 2 initial assumptions"
+    },
+    {
+      "id": "Q1",
+      "verdict": "PASS",
+      "message": "US-01, US-02 and US-03 written"
+    },
+    {
+      "id": "Q2",
+      "verdict": "PASS",
+      "message": "AC-01 to AC-06 each have Given, When and Then"
+    },
+    {
+      "id": "Q3",
+      "verdict": "PASS",
+      "message": "two criteria under each story"
+    },
+    {
+      "id": "Q4",
+      "verdict": "PASS",
+      "message": "every criterion names its rules; R1-R5 all covered"
+    },
+    {
+      "id": "Q5",
+      "verdict": "PASS",
+      "message": "none of the five excluded features in the stories or criteria"
+    },
+    {
+      "id": "SQ1",
+      "verdict": "PASS",
+      "message": "4 participants declared, 15 messages, all named"
+    },
+    {
+      "id": "SQ2",
+      "verdict": "PASS",
+      "message": "catalog \"browseCatalog(semester)\" then request \"register(studentId, offeringId)\""
+    },
+    {
+      "id": "SQ3",
+      "verdict": "PASS",
+      "message": "3 guarded alt branches: success, full and duplicate"
+    },
+    {
+      "id": "SQ4",
+      "verdict": "PASS",
+      "message": "duplicate and capacity checked after the request, before creation"
+    },
+    {
+      "id": "SQ5",
+      "verdict": "PASS",
+      "message": "confirmation follows creation"
+    },
+    {
+      "id": "SQ6",
+      "verdict": "PASS",
+      "message": "rejection branches create, update and confirm nothing (R5)"
+    },
+    {
+      "id": "SQ7",
+      "verdict": "PASS",
+      "message": "each rejection branch returns its reason"
+    },
+    {
+      "id": "SQ8",
+      "verdict": "PASS",
+      "message": "the atomic operation is stated"
+    },
+    {
+      "id": "CL1",
+      "verdict": "PASS",
+      "message": "Student, Course, CourseOffering and Enrollment present"
+    },
+    {
+      "id": "CL2",
+      "verdict": "PASS",
+      "message": "code, title, semester, capacity and a student identifier present"
+    },
+    {
+      "id": "CL3",
+      "verdict": "PASS",
+      "message": "3 associations, multiplicities at both ends"
+    },
+    {
+      "id": "CL4",
+      "verdict": "PASS",
+      "message": "1 Student and 1 CourseOffering per Enrollment, 0..* each way; 1 Course per CourseOffering"
+    },
+    {
+      "id": "CL5",
+      "verdict": "PASS",
+      "message": "capacity and uniqueness constraints stated in notes"
+    },
+    {
+      "id": "CL6",
+      "verdict": "PASS",
+      "message": "no extra classes"
+    },
+    {
+      "id": "CN1",
+      "verdict": "PASS",
+      "message": "3 technical lifeline(s), each named in section 3"
+    },
+    {
+      "id": "CN2",
+      "verdict": "PASS",
+      "message": "3 association(s) read both ways in section 4, the diagram has 3"
+    },
+    {
+      "id": "F1",
+      "verdict": "PASS",
+      "message": "both original AI diagrams kept in models/original/"
+    },
+    {
+      "id": "F2",
+      "verdict": "PASS",
+      "message": "four renders in models/img/"
+    },
+    {
+      "id": "F3",
+      "verdict": "PASS",
+      "message": "every image link in sections 3, 4 and 12 resolves"
+    },
+    {
+      "id": "T1",
+      "verdict": "PASS",
+      "message": "R1-R5 each traced to a criterion, model evidence and a case"
+    },
+    {
+      "id": "T2",
+      "verdict": "PASS",
+      "message": "T1-T4: T1 pass, T2 pass, T3 pass, T4 pass"
+    },
+    {
+      "id": "T3",
+      "verdict": "PASS",
+      "message": "8 complete review decision(s), 3 required"
+    },
+    {
+      "id": "T4",
+      "verdict": "PASS",
+      "message": "2 source checks, every one with a locator"
+    },
+    {
+      "id": "R1",
+      "verdict": "PASS",
+      "message": "3 reference(s); every table URL listed"
+    },
+    {
+      "id": "E1",
+      "verdict": "PASS",
+      "message": "exchanges found: B1, B2, B3, B4"
+    },
+    {
+      "id": "E2",
+      "verdict": "PASS",
+      "message": "metadata: tool, model, date and purpose on every exchange"
+    },
+    {
+      "id": "E3",
+      "verdict": "PASS",
+      "message": "every prompt and response pasted in full"
+    },
+    {
+      "id": "E4",
+      "verdict": "PASS",
+      "message": "Prompts A, B, C and D used as given"
+    },
+    {
+      "id": "E5",
+      "verdict": "PASS",
+      "message": "every bracketed field replaced"
+    },
+    {
+      "id": "E6",
+      "verdict": "PASS",
+      "message": "rules R1-R5 pasted; 19 words shared with Appendix A"
+    },
+    {
+      "id": "E7",
+      "verdict": "PASS",
+      "message": "Prompt B carries US-01-03 and AC-01-06"
+    },
+    {
+      "id": "E8",
+      "verdict": "PASS",
+      "message": "both originals are in the Prompt B response"
+    },
+    {
+      "id": "E9",
+      "verdict": "PASS",
+      "message": "Prompt C holds 2 PlantUML block(s)"
+    },
+    {
+      "id": "E10",
+      "verdict": "PASS",
+      "message": "Prompt D contains 95% of the original sources (30%+ expected — \"Original sources: [paste]\")"
+    }
+  ],
+  "measured": {
+    "explanation_words": 250,
+    "reflection_words": 165,
+    "stories": 3,
+    "criteria": 6,
+    "walkthroughs": {
+      "T1": "pass",
+      "T2": "pass",
+      "T3": "pass",
+      "T4": "pass"
+    },
+    "review_decisions": 8,
+    "source_checks": 2,
+    "exchanges": 4,
+    "model": "not displayed"
+  }
+}

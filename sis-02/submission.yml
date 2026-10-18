@@ -1,0 +1,29 @@
+schema: 1
+assignment: "sis-02"
+student:
+  name: "Assylbek Uzakbayev"
+  student_id: "24B032082"
+  group: "Monday 16:00-19:00"
+  github: "Assylbek-Uzakbayev"
+assistant:
+  tool: "ChatGPT Work"
+  model: "not displayed"
+checker:
+  pass: 44
+  fail: 0
+  error: 0
+  commit: "c114d1f"
+counts:
+  stories: 3
+  criteria: 6
+  exchanges: 4
+  review_decisions: 8
+  source_checks: 2
+  explanation_words: 250
+  reflection_words: 165
+walkthroughs:
+  T1: pass
+  T2: pass
+  T3: pass
+  T4: pass
+known_fails: []

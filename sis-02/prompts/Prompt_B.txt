@@ -1,0 +1,51 @@
+Using my approved scenario, R1–R5, stories and criteria below, return separate PlantUML code blocks for a sequence diagram and a domain class diagram.
+Sequence: include catalog browsing and guarded success, full-course and duplicate outcomes. Model final checks and creation as one atomic operation.
+Class: show domain concepts, useful attributes and multiplicities. State the capacity and uniqueness constraints. Explain assumptions and any technical lifelines.
+
+A student browses an electronic course catalog, chooses a course offering and requests
+registration. Each offering has a limited number of places.
+
+A Course describes a subject. A CourseOffering is one scheduled section in one semester.
+Registration always targets a specific offering.
+
+Assume that the student is signed in, the selected offering exists, and its capacity is a
+positive whole number.
+
+Exclude payments, prerequisites, timetable clashes, waiting lists and cancellation. Use
+fictional students and courses.
+
+| Rule | |
+| --- | --- |
+| **R1. Catalog** | Show the course code, title, offering and available places for one semester. |
+| **R2. Capacity** | Recheck current availability when registering. Enrollment must never exceed the offering's capacity. |
+| **R3. Duplicates** | A student may have at most one enrollment in the same offering. Reject a repeat request. |
+| **R4. Success** | Create exactly one Enrollment linking the student and offering, update availability and return a confirmation. |
+| **R5. Rejection** | Explain "course full" or "already enrolled". Create no enrollment and leave the enrollment count unchanged. |
+
+These rules define this assignment. **A catalog view does not reserve a place.** Model the final
+checks and enrollment creation as one atomic operation so competing requests cannot take the same
+last place. A note describing the atomic operation is sufficient; database implementation is
+outside this assignment.
+
+### US-01 — Browse offerings
+
+**US-01:** As a student, I want to browse course offerings for one semester, so that I can choose a specific offering.
+
+- **AC-01** (R1): Given course offerings exist for the selected semester, When the student opens its catalog, Then each offering displays the course code, title, offering identifier and available places.
+- **AC-02** (R1, R2): Given the catalog shows an available place, When the student selects that offering, Then the selection reserves no place, and current availability must be checked again during registration.
+
+### US-02 — Register for an offering
+
+**US-02:** As a student, I want to register for a selected offering, so that I receive confirmation of my enrollment.
+
+- **AC-03** (R2, R3, R4): Given an offering has capacity 2, enrollment count 0 and no enrollment for the requesting student, When the student requests registration, Then duplicate and current capacity checks and creation occur atomically, exactly one Enrollment links the student to the offering, the count becomes 1, available places become 1 and confirmation is returned.
+- **AC-04** (R2, R3, R4): Given an offering has capacity 2, enrollment count 1 and no enrollment for either of two requesting students, When both students request the last place, Then atomic checks and creation allow exactly one request to succeed, create exactly one Enrollment, change the count to 2 and available places to 0, and confirm only the successful request.
+
+### US-03 — Receive a clear rejection
+
+**US-03:** As a student, I want a clear reason when registration is rejected, so that I understand why no enrollment was created.
+
+- **AC-05** (R2, R5): Given the catalog previously showed a place but the offering now has enrollment count 2 and capacity 2, and the requesting student is not enrolled, When registration is requested, Then the system rechecks current capacity, returns “course full,” creates no Enrollment and leaves the count at 2.
+- **AC-06** (R3, R5): Given the student already has an Enrollment in an offering with capacity 2 and enrollment count 1, When the student requests registration again, Then the system returns “already enrolled,” creates no additional Enrollment and leaves the count at 1.
+
+Approved decision: if already enrolled and full both apply, return already enrolled.
