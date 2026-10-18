@@ -4,6 +4,7 @@ skinparam sequenceMessageAlign center
 hide footbox
 title University course registration - R1-R5
 autonumber
+
 actor Student
 participant CatalogService
 participant RegistrationService
@@ -13,29 +14,36 @@ Student -> CatalogService: browseCatalog(semester)
 CatalogService -> RegistrationStore: getOfferings(semester)
 RegistrationStore --> CatalogService: courseCode, title, offeringId, availablePlaces
 CatalogService --> Student: showCatalog(courseCode, title, offeringId, availablePlaces)
+
 note over Student, CatalogService
 R1: availablePlaces is a snapshot, not a reservation.
 The student selects one offeringId from the catalog.
 end note
+
 Student -> RegistrationService: register(studentId, offeringId)
+
 group atomic registration operation (R2, R3, R4, R5)
 note over RegistrationService, RegistrationStore
-All registrations for this offering are serialized.
+All registrations for the same offering are serialized.
 Duplicate and capacity checks plus creation commit atomically.
-A rejected request leaves the enrollment count unchanged.
+Successful creation adds exactly one Enrollment:
+newCount = count + 1.
+Rejected requests leave the enrollment count unchanged.
 end note
+
 RegistrationService -> RegistrationStore: alreadyEnrolled(studentId, offeringId)
-RegistrationStore --> RegistrationService: duplicate
+RegistrationStore --> RegistrationService: hasEnrollment
 RegistrationService -> RegistrationStore: countEnrollmentsAndCapacity(offeringId)
 RegistrationStore --> RegistrationService: count, capacity
-alt already enrolled
+
+alt already enrolled: hasEnrollment = true
 RegistrationService --> Student: already enrolled
-else course full
+else course full: hasEnrollment = false and count >= capacity
 RegistrationService --> Student: course full
-else not enrolled and places left
+else not enrolled and places left: hasEnrollment = false and count < capacity
 RegistrationService -> RegistrationStore: createEnrollment(studentId, offeringId)
-RegistrationStore --> RegistrationService: enrollmentId, count = count + 1
-RegistrationService -> RegistrationService: updateAvailability(capacity - count)
+RegistrationStore --> RegistrationService: enrollmentId, newCount
+RegistrationService -> RegistrationService: calculateAvailablePlaces(capacity - newCount)
 RegistrationService --> Student: confirmRegistration(enrollmentId, availablePlaces)
 end
 end

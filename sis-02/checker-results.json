@@ -1,8 +1,8 @@
 {
-  "ok": false,
+  "ok": true,
   "counts": {
-    "PASS": 37,
-    "FAIL": 7,
+    "PASS": 44,
+    "FAIL": 0,
     "ERROR": 0
   },
   "total": 44,
@@ -165,7 +165,7 @@
     {
       "id": "T3",
       "verdict": "PASS",
-      "message": "7 complete review decision(s), 3 required"
+      "message": "8 complete review decision(s), 3 required"
     },
     {
       "id": "T4",
@@ -189,13 +189,13 @@
     },
     {
       "id": "E3",
-      "verdict": "FAIL",
-      "message": "B1 prompt missing or under 20 words; B1 response 23 words — paste it complete (at least 150 expected); B2 prompt missing or under 20 words; B2 response 23 words — paste it complete (at least 150 expected); B3 prompt missing or under 20 words; B3 response 23 words — paste it complete (at least 150 expected); B4 prompt missing or under 20 words; B4 response 23 words — paste it complete (at least 100 expected)"
+      "verdict": "PASS",
+      "message": "every prompt and response pasted in full"
     },
     {
       "id": "E4",
-      "verdict": "FAIL",
-      "message": "B1 prompt lost 3 fixed phrase(s), e.g. \"act as a requirements analyst\"; B2 prompt lost 3 fixed phrase(s), e.g. \"return separate plantuml code blocks for a sequence diagram and a domain class diagram\"; B3 prompt lost 3 fixed phrase(s), e.g. \"check message order, guards, state changes, multiplicities and naming\"; B4 prompt lost 3 fixed phrase(s), e.g. \"revise the uml sources using only my accepted review decisions\""
+      "verdict": "PASS",
+      "message": "Prompts A, B, C and D used as given"
     },
     {
       "id": "E5",
@@ -204,28 +204,28 @@
     },
     {
       "id": "E6",
-      "verdict": "FAIL",
-      "message": "the rules are not pasted (catalog, capacity, duplicate, success, rejection, R2, R3, R4 missing); only 0 content word(s) from your Appendix A — paste your initial assumptions"
+      "verdict": "PASS",
+      "message": "rules R1-R5 pasted; 19 words shared with Appendix A"
     },
     {
       "id": "E7",
-      "verdict": "FAIL",
-      "message": "Prompt B does not contain US-01, US-02, US-03, AC-01, AC-02, AC-03, AC-04, AC-05, AC-06 — paste the approved requirements below it"
+      "verdict": "PASS",
+      "message": "Prompt B carries US-01-03 and AC-01-06"
     },
     {
       "id": "E8",
-      "verdict": "FAIL",
-      "message": "the Prompt B response holds 0 PlantUML block(s), 2 expected; only 0% of original/sequence.puml is in the Prompt B response — the original is the AI's output, unedited; only 0% of original/classes.puml is in the Prompt B response — the original is the AI's output, unedited"
+      "verdict": "PASS",
+      "message": "both originals are in the Prompt B response"
     },
     {
       "id": "E9",
-      "verdict": "FAIL",
-      "message": "Prompt C holds 0 PlantUML block(s), 2 expected — paste both models below it"
+      "verdict": "PASS",
+      "message": "Prompt C holds 2 PlantUML block(s)"
     },
     {
       "id": "E10",
-      "verdict": "FAIL",
-      "message": "Prompt D contains 0% of the original sources (30%+ expected — \"Original sources: [paste]\")"
+      "verdict": "PASS",
+      "message": "Prompt D contains 95% of the original sources (30%+ expected — \"Original sources: [paste]\")"
     }
   ],
   "measured": {
@@ -239,7 +239,7 @@
       "T3": "pass",
       "T4": "pass"
     },
-    "review_decisions": 7,
+    "review_decisions": 8,
     "source_checks": 2,
     "exchanges": 4,
     "model": "not displayed"
