@@ -29,22 +29,23 @@ outside this assignment.
 
 ### US-01 — Browse offerings
 
-**US-01:** As a student, I want to browse offerings for one semester, so that I can select a suitable offering.
+**US-01:** As a student, I want to browse course offerings for one semester, so that I can choose a specific offering.
 
-- **AC-01** (R1): Given offerings exist for a semester, When I browse that semester's catalog, Then each result shows its course code, title, offering identifier and available places.
-- **AC-02** (R1, R2): Given I view an offering with available places, When I select it, Then the selection identifies that offering and does not reserve a place; registration must recheck current availability.
+- **AC-01** (R1): Given course offerings exist for the selected semester, When the student opens its catalog, Then each offering displays the course code, title, offering identifier and available places.
+- **AC-02** (R1, R2): Given the catalog shows an available place, When the student selects that offering, Then the selection reserves no place, and current availability must be checked again during registration.
 
 ### US-02 — Register for an offering
 
-**US-02:** As a student, I want to register for a selected offering, so that I receive a confirmed place.
+**US-02:** As a student, I want to register for a selected offering, so that I receive confirmation of my enrollment.
 
-- **AC-03** (R2, R3, R4): Given capacity is 2, enrolled count is 0 and I am not enrolled, When I request registration, Then the system atomically checks duplicates and capacity, creates exactly one Enrollment linking me to that offering, changes count to 1 and available places to 1, and returns confirmation.
-- **AC-04** (R2, R3, R4): Given capacity is 2, enrolled count is 1 and I am not enrolled, When I request registration, Then atomic checks and creation produce exactly one Enrollment, count becomes 2, available places become 0 and confirmation is returned; a competing new student cannot take that same last place.
+- **AC-03** (R2, R3, R4): Given an offering has capacity 2, enrollment count 0 and no enrollment for the requesting student, When the student requests registration, Then duplicate and current capacity checks and creation occur atomically, exactly one Enrollment links the student to the offering, the count becomes 1, available places become 1 and confirmation is returned.
+- **AC-04** (R2, R3, R4): Given an offering has capacity 2, enrollment count 1 and no enrollment for either of two requesting students, When both students request the last place, Then atomic checks and creation allow exactly one request to succeed, create exactly one Enrollment, change the count to 2 and available places to 0, and confirm only the successful request.
 
 ### US-03 — Receive a clear rejection
 
-**US-03:** As a student, I want a clear reason when registration is rejected, so that I understand the result.
+**US-03:** As a student, I want a clear reason when registration is rejected, so that I understand why no enrollment was created.
 
-- **AC-05** (R2, R5): Given the catalog showed a place but the current count is 2 of capacity 2 and I am not enrolled, When I request registration, Then the current capacity check rejects with course full, creates no Enrollment and leaves count at 2.
-- **AC-06** (R3, R5): Given I already hold an Enrollment in the offering with count 1 of capacity 2, When I request registration again, Then the duplicate check rejects with already enrolled, creates no Enrollment and leaves count at 1.
+- **AC-05** (R2, R5): Given the catalog previously showed a place but the offering now has enrollment count 2 and capacity 2, and the requesting student is not enrolled, When registration is requested, Then the system rechecks current capacity, returns “course full,” creates no Enrollment and leaves the count at 2.
+- **AC-06** (R3, R5): Given the student already has an Enrollment in an offering with capacity 2 and enrollment count 1, When the student requests registration again, Then the system returns “already enrolled,” creates no additional Enrollment and leaves the count at 1.
 
+Approved decision: if already enrolled and full both apply, return already enrolled.

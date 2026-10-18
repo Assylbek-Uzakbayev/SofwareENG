@@ -55,6 +55,7 @@ skinparam sequenceMessageAlign center
 hide footbox
 title University course registration - R1-R5
 autonumber
+
 actor Student
 participant CatalogService
 participant RegistrationService
@@ -64,21 +65,26 @@ Student -> CatalogService: browseCatalog(semester)
 CatalogService -> RegistrationStore: getOfferings(semester)
 RegistrationStore --> CatalogService: courseCode, title, offeringId, availablePlaces
 CatalogService --> Student: showCatalog(courseCode, title, offeringId, availablePlaces)
+
 note over Student, CatalogService
 R1: availablePlaces is a snapshot, not a reservation.
 The student selects one offeringId from the catalog.
 end note
+
 Student -> RegistrationService: register(studentId, offeringId)
+
 group atomic registration operation (R2, R3, R4, R5)
 note over RegistrationService, RegistrationStore
-All registrations for this offering are serialized.
+All registrations for the same offering are serialized.
 Duplicate and capacity checks plus creation commit atomically.
-A rejected request leaves the enrollment count unchanged.
+Rejected requests leave the enrollment count unchanged.
 end note
+
 RegistrationService -> RegistrationStore: alreadyEnrolled(studentId, offeringId)
 RegistrationStore --> RegistrationService: duplicate
 RegistrationService -> RegistrationStore: countEnrollmentsAndCapacity(offeringId)
 RegistrationStore --> RegistrationService: count, capacity
+
 alt already enrolled
 RegistrationService --> Student: already enrolled
 else course full
@@ -92,6 +98,7 @@ end
 end
 @enduml
 ```
+
 ```plantuml
 @startuml
 !pragma layout smetana
@@ -99,27 +106,34 @@ skinparam backgroundColor #FFFFFF
 skinparam classAttributeIconSize 0
 hide methods
 title Course registration domain - R1-R5
+
 class Student {
   studentId : String
 }
+
 class Course {
   code : String
   title : String
 }
+
 class CourseOffering {
   offeringId : String
   semester : String
   capacity : Integer
   /availablePlaces : Integer
 }
+
 class Enrollment {
   enrollmentId : String
 }
+
 Student "1" -- "0..*" Enrollment : holds >
 CourseOffering "1" -- "0..*" Enrollment : receives >
 Course "1" -- "0..*" CourseOffering : is offered as >
+
 note "Capacity (R2): capacity is a positive integer.\n0 <= enrollment count <= capacity.\navailablePlaces = capacity - enrollment count." as N1
 N1 .. CourseOffering
+
 note "Uniqueness (R3): at most one Enrollment\nfor each (studentId, offeringId) pair." as N2
 N2 .. Enrollment
 @enduml
