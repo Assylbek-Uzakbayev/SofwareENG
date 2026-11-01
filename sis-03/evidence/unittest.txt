@@ -1,0 +1,30 @@
+test_121 (test_booking.BookingTests.test_121) ... ok
+test_blocked (test_booking.BookingTests.test_blocked) ... ok
+test_blocked_empty (test_booking.BookingTests.test_blocked_empty) ... ok
+test_boolean (test_booking.BookingTests.test_boolean) ... ok
+test_contained (test_booking.BookingTests.test_contained) ... ok
+test_empty (test_booking.BookingTests.test_empty) ... ok
+test_enclosing (test_booking.BookingTests.test_enclosing) ... ok
+test_equal (test_booking.BookingTests.test_equal) ... ok
+test_exact_120 (test_booking.BookingTests.test_exact_120) ... ok
+test_exact_overlap (test_booking.BookingTests.test_exact_overlap) ... ok
+test_float (test_booking.BookingTests.test_float) ... ok
+test_midnight_end (test_booking.BookingTests.test_midnight_end) ... ok
+test_negative (test_booking.BookingTests.test_negative) ... ok
+test_overlap (test_booking.BookingTests.test_overlap) ... ok
+test_past_midnight (test_booking.BookingTests.test_past_midnight) ... ok
+test_repeat_unchanged (test_booking.BookingTests.test_repeat_unchanged) ... ok
+test_reversed (test_booking.BookingTests.test_reversed) ... ok
+test_second_booking (test_booking.BookingTests.test_second_booking) ... ok
+test_starts_now (test_booking.BookingTests.test_starts_now) ... ok
+test_starts_past (test_booking.BookingTests.test_starts_past) ... ok
+test_string (test_booking.BookingTests.test_string) ... ok
+test_touching_after (test_booking.BookingTests.test_touching_after) ... ok
+test_touching_before (test_booking.BookingTests.test_touching_before) ... ok
+test_unsorted_accepted_unchanged (test_booking.BookingTests.test_unsorted_accepted_unchanged) ... ok
+test_unsorted_rejected_unchanged (test_booking.BookingTests.test_unsorted_rejected_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.001s
+
+OK
