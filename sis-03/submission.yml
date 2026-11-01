@@ -21,7 +21,7 @@ checker:
   pass: 49
   fail: 4
   error: 2
-  commit: "not-created"
+  commit: "74085ff"
 counts:
   tests: 25
   exchanges: 4
