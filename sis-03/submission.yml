@@ -1,0 +1,39 @@
+schema: 1
+assignment: "sis-03"
+student:
+  name: "Uzakbayev Assylbek"
+  student_id: "24B032082"
+  group: "MON 16-00"
+  github: "Assylbek-Uzakbayev"
+assistant:
+  tool: "ChatGPT Work / Codex"
+  model: "not displayed"
+bolt:
+  model: "not displayed"
+  project_url: "not-shared"
+language:
+  name: "python"
+  path: "A"
+reuse:
+  python_v1: "fresh"
+  web_v1: "fresh"
+checker:
+  pass: 49
+  fail: 4
+  error: 2
+  commit: "74085ff"
+counts:
+  tests: 25
+  exchanges: 4
+  issues: 3
+  critique_decisions: 4
+  reflection_words: 60
+cases:
+  python_final_matches: 11
+  page_final_matches: 1
+known_fails: [E2, E3, C1, C4, X5, Q1]
+honesty:
+  v1_unedited: "yes"
+  screenshots_unedited: "yes"
+  results_observed: "yes"
+  ai_usage_disclosed: "yes"

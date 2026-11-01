@@ -1,0 +1,24 @@
+PASS T1 touching-end available: available=true
+PASS T2 overlap unavailable: available=false reason="Overlaps an existing booking (600–660)."
+PASS T3 blocked unavailable: available=false reason="This room is blocked and cannot be booked."
+PASS T4 120min available: available=true
+PASS T5 121min unavailable: available=false reason="Duration is 121 minutes; the maximum is 120 minutes."
+PASS T6 start-equals-now unavailable: available=false reason="Start time must be strictly after the current time (now = 540)."
+PASS T7 reversed unavailable: available=false reason="Start time must be before end time."
+PASS T8 midnight-upper available: available=true
+PASS T9 beyond-midnight unavailable: available=false reason="End time cannot exceed 1440 (midnight)."
+PASS T10 second-booking overlap unavailable: available=false reason="Overlaps an existing booking (700–760)."
+PASS T11 repeated-check: available both times, bookings unchanged ([[600,660]])
+PASS now-blank invalid: valid=false value=null | input=""
+PASS now-abc invalid: valid=false value=null | input="abc"
+PASS now-negative invalid: valid=false value=null | input="-1"
+PASS now-1440 invalid: valid=false value=null | input="1440"
+PASS now0 available: available=true
+PASS now1439 no-valid-interval unavailable: available=false reason="Start time must be before end time."
+PASS now-1439 valid: valid=true value=1439 | input="1439"
+PASS now-0 valid: valid=true value=0 | input="0"
+PASS Extra touching-start available: available=true
+PASS Extra start-before-now unavailable: available=false reason="Start time must be strictly after the current time (now = 540)."
+PASS Extra midnight-lower unavailable: available=false reason="Start time must be strictly after the current time (now = 540)."
+
+22/22 checks passed, 0 failed.

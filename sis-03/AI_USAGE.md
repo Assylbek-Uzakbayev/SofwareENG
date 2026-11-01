@@ -1,0 +1,7 @@
+# AI usage disclosure
+
+Date: 2026-11-01. Coding tool: ChatGPT Work / Codex. Exact model: not displayed. Web tool: Bolt.new; exact model not displayed. Language: Python, Path A. Python v1 and web v1 are fresh, not reused from Week 05/06.
+
+The student requested assignment preparation and then operated Bolt.new. Codex read the brief/starter, generated Python v1/final and 25 tests, and ran the instructor checker. The student used supplied Plan/Generate/Critique/Repair prompts in Bolt, pasted its replies, and downloaded the first and repaired exports. Codex reviewed the real exports, identified the invalid-now UI gap, corrected faulty AI recommendations, and independently reran the v1/final TypeScript logic suites: 14/14 and 22/22.
+
+Codex assisted with technical report writing, prompt drafting, critique decisions, evidence organization and declaration tooling. The Python final is identical to its preserved initial generated implementation. Both Bolt source exports are unchanged copies of the supplied ZIPs. Original and final T1 screenshots were supplied by the student and preserved without edits. Typecheck/build success is reported by Bolt, not independently rerun here. No T2–T12 page observation, 375px mobile check or screen-reader test is claimed. Repair screenshots were skipped at the student's request. No pre-AI student baseline, personal reflection, unknown student metadata, Git history or PR has been invented. The instructor checkers remain unmodified.
